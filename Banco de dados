@@ -1,0 +1,114 @@
+create database academia;
+
+
+CREATE TABLE alunos 
+(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    cpf int unique not null,
+    email varchar(80) not null,
+    idade varchar(3) not null,
+    nome varchar(80) not null,
+    telefone int not null,
+    cep int not null,
+    rua varchar(30) not null,
+    numero int not null,
+    bairro varchar(30) not null,
+    cidade varchar(50) not null,
+    uf varchar(2) not null,
+    turma varchar(100),
+    plano varchar(100)
+    
+
+);
+
+
+CREATE TABLE funcionarios
+(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    cpf int UNIQUE not null,
+    idade int not null,
+    email varchar(80) not null,
+    nome varchar(80) not null,
+    telefone int not null,
+    cep int not null,
+    rua varchar(50) not null,
+    numero int not null,
+    bairro varchar(50) not null,
+    cidade varchar(50) not null,
+    uf varchar(2) not null,
+    cargo varchar(50) not null,
+    usuario varchar(50) not null,
+    senha varchar(30) not null
+
+);
+
+
+
+
+CREATE TABLE turmas
+( 
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    nome varchar(80) not null, 
+    modalidade varchar(100) not null, 
+    professor varchar(80) not null 
+);
+
+
+
+CREATE TABLE planos
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    descricao varchar(500) not null,
+    modalidade varchar(100) not null,
+    mensalidade float not null
+);
+
+
+
+CREATE TABLE grupos
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(80) NOT null
+);
+
+
+
+CREATE TABLE exercicios
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    grupo varchar(50) not null,
+    obs varchar(300) not null
+);
+
+
+
+CREATE TABLE interessados
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    idade int not null,
+    obs varchar(300) not null,
+    email varchar(80) not null,
+    telefone int not null
+    
+);
+
+
+CREATE TABLE mensalidade
+(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    plano varchar(80) not null,
+    valor float not null,
+    aluno varchar(80) not null,
+    dia int not null,
+    mes int not null,
+    ano int not null,
+    pago varchar(5) not null
+);
+
+
+
+INSERT INTO funcionarios(usuario,senha) VALUES('admin','123') 
+

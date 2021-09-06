@@ -1,0 +1,385 @@
+<style>
+#wrapper {
+	padding-left: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#wrapper.toggled {
+	padding-left: 235px;
+}
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 230px;
+	width: 0;
+	height: 100%;
+	margin-left: -230px;
+	overflow-y: auto;
+	background: #000;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+	width: 235px;
+}
+#page-content-wrapper {
+	width: 100%;
+	position: absolute;
+	padding: 15px;
+}
+#wrapper.toggled #page-content-wrapper {
+	position: absolute;
+	margin-right: -230px;
+}
+
+/* Sidebar Styles */
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 235px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+}
+.sidebar-nav li a {
+	display: block;
+	text-decoration: none;
+	color: #999999;
+}
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+}
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+	text-decoration: none;
+}
+.sidebar-nav>.sidebar-brand {
+	height: 65px;
+	font-size: 18px;
+	line-height: 60px;
+}
+.sidebar-nav>.sidebar-brand a {
+	color: #999999;
+}
+.sidebar-nav>.sidebar-brand a:hover {
+	color: #fff;
+	background: none;
+}
+/* html { margin-left: calc(100vw - 100%); } */
+
+/* Navbar !!!!!! */
+nav form {
+position: relative;
+height: 100%;
+background: inherit;
+}
+.nav-wrapper{
+background: inherit;
+  
+}
+
+.search-close-icon{
+  display: none!important;
+  position: absolute;
+  top: 0;
+  left: 100%!important;
+  padding-left: 0px;
+  color: rgba(0, 0, 0, 0.54);
+  transition: color .2s;
+  cursor: pointer;
+}
+
+
+.my-grey{
+  background: #f7f7f7;
+}
+
+input.search-field {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 2px;
+  border: 0;
+  height: 36px;
+  padding: 8px 8px 8px 60px;
+  width: 200px;
+  background: #f7f7f7;
+  transition: background 0.2s, width .2s;
+}
+input.search-field:hover {
+  background: #ebebeb;
+}
+.searchbox {
+  position: relative;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(0, 0, 0, 0.54);
+}
+input.search-field:focus {
+  outline: none;
+  width: 500px;
+  color: #212121;
+}
+input.search-field:focus:hover {
+  background: #f7f7f7;
+}
+.search-icon {
+  position: absolute;
+  top: 0;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.search-content {
+  color: #303c42;
+  width: 90%;
+  margin: auto;
+  height: auto;
+  padding: 8px 10px;
+}
+.search-heading {
+  color: #757575;
+  display: block;
+  font-size: 12px;
+  line-height: 30px;
+}
+input.search-field ~ .search-popup {
+  overflow: hidden;
+  left: 0px;
+  min-height: 50px;
+  max-height: 700px;
+  width: 200px;
+  top: -450px; 
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: width .2s, top .2s ease-in-out;
+  border-radius: 2px;
+  background-color: #fff;
+}
+input.search-field:focus ~ .search-popup {
+  width: 500px;
+  top: 50px;
+}
+nav ul.popup-list a:hover {
+  background-color: initial;
+}
+nav ul.popup-list li {
+  float: none;
+}
+nav ul.popup-list li a {
+  line-height: 30px;
+  padding: 0;
+  font-size: 12px;
+  color: #212121 !important;
+}
+nav ul.popup-list li a:hover {
+  background-color: #f7f7f7;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+.top-margin {
+  margin-top: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  nav form {
+    left: calc(90vw - 100%); 
+  }
+  
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: transparent;
+  }
+
+  input.search-field {
+    width: 1px;
+    margin-right: 0px;
+    padding: 8px 25px;
+  }
+  input.search-field ~ .search-popup {
+    width: 1px;
+    margin-right: 0px;
+    padding: 8px 25px;
+  }
+
+  .search-icon {
+    top: 0;
+    padding-left: 15px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+input.search-field:focus {
+  	margin-right: 0px;
+    width: 100vw;
+    padding: 8px 8px 8px 50px;
+}
+
+input.search-field:focus ~ .search-popup {
+	width: 100vw;
+}
+
+.search-content {
+	width: 100%;
+	padding: 8px 8px;
+}
+
+nav .nav-wrapper {
+	margin-right: 0px;
+ }
+}
+</style>
+
+<link <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Spicy+Rice" rel="stylesheet">
+
+<div id="wrapper" class="toggled">
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper" class="black" style="border-right: 0.5px solid #fbc531;">
+		<ul class="sidebar-nav">
+			<li class="amber">
+				<a href="Inicio.php" class="brand-logo"><img src="imagens/eagles-min.png" style="height: 100px;width: 160px; margin-top: 10px;margin-left: 15px;border-radius: 100px;"></a>
+			</li>
+			<li>
+				<a class="dropdown-trigger white-text" data-target="dropdown1" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Cadastros<i class="material-icons right">arrow_drop_down</i></a>
+			</li>
+			<li>
+				<a href="Mensalidade.php" class="white-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Mensalidades</a>
+			</li>
+			<li>
+				<a href="Ficha_Treino.php" class="white-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Ficha de Treino</a>
+			</li>
+			<li>
+				<a href="Exibir_Alunos_Cadastrados.php" class="white-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Relátorio de Alunos</a>
+			</li>
+			<li>
+				<a href="Selecionar_Turma.php" class="white-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Relátorio de Turmas</a>
+			</li>
+			<li>
+				<center>
+					<div style="position: center;margin-top: 280px;">
+						<a href="Index.php" class="btn amber black-text" style="width: 130px;"><span style="margin-left: -20px;"><b>Sair</b></span></a>
+					</div>
+			</center>
+			</li>
+		</ul>
+	</div>
+
+	<ul id="dropdown1" class="dropdown-content amber" style="margin: 5px;">
+	<li><a href="#" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Cadastros</a></li>
+	<li><a href="Cadastro_Funcionario.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Funcionário</a></li>
+	<li><a href="Cadastro_Aluno.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Alunos</a></li>
+	<li><a href="Cadastro_Turma.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Turma</a></li>
+	<li><a href="Cadastro_Plano.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Planos</a></li>
+	<li><a href="Cadastro_Muscular.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Grupo Musculares</a></li>
+	<li><a href="Cadastro_Exercicios.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Exercicios</a></li>
+	<li><a href="Cadastro_Interessados.php" class="black-text" style="font-size: 18px;font-family: 'Allerta Stencil', sans-serif;">Interessados</a></li>
+	</ul>
+
+
+
+<div id="container" class="black">
+	<nav class="nav-wrapper pushpin z-depth-3" style="position: fixed;z-index: 1;border-bottom: 2px solid #fbc531;">
+			<ul>
+				<li>
+					<div id="wrapper" class="toggled2">
+						<a href="#menu-toggle" id="menu-toggle"><i class="material-icons">menu</i></a>
+					</div>
+				</li>
+				<li style="margin-left: 300px;">
+					<form action="" class="browser-default">
+						<input id="search-input" placeholder="Search" type="text" class="browser-default search-field" name="q" value="" autocomplete="off" aria-label="Search box">
+						<label for="search-input"><i class="material-icons search-icon">search</i></label> 
+						<i class="material-icons search-close-icon">cancel</i>
+						<div class="search-popup">
+							<div class="search-content">
+								<label class="search-heading">Procure</label>
+								<ul class="popup-list">
+									<li class="">
+										<a class="grey-text" href="Cadastro_Funcionario.php">Cadastro Funcionário</a>
+									</li>
+									<li class="">
+										<a class="grey-text" href="Cadastro_Aluno.php">Cadastro Aluno</a>
+									</li>
+									<li class="">
+										<a class="grey-text" href="Exibir_Alunos_Cadastrados.php">Relatorio aluno</a>
+									</li>
+									<li class="">
+										<a class="grey-text" href="Selecionar_Turma.php">Relatorio Turma</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</li>
+				<li style="margin-left: 200px;margin-top: 8px;">
+						<img href="#" src="imagens/user.png" style="width: 50px; height: 50px;cursor: pointer;">
+						<!--<span>
+							<?php
+								include 'conexao_db.php';
+
+
+								echo '$usuario';
+							?>
+						</span>-->
+				</li>
+			</ul>
+	</nav>
+</div><br><br><br>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$("#wrapper").toggleClass("toggled");
+	});
+	</script>
+
+	<!-- Script do JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<script type="text/javascript">
+		M.AutoInit();
+
+	// Delay Button display for effect
+		document.addEventListener("DOMContentLoaded", function() {
+			let box = document.getElementById("scale");
+			setTimeout(function() {
+			box.classList.add("scale-in");
+			}, 500);
+		});
+
+	/* hide when expanded*/
+		document.querySelector(".search-field").addEventListener("focus", function() {
+			let hidden = document.querySelectorAll(".search-hide");
+
+			for (let i = 0; i < hidden.length; ++i) {
+			hidden[i].style.display = "none";
+			}
+		});
+
+	/* show when expanded*/
+		document.querySelector(".search-field").addEventListener("focusout", function() {
+			let hidden = document.querySelectorAll(".search-hide");
+			for (let i = 0; i < hidden.length; ++i) {
+			hidden[i].style.display = "block";
+			}
+		});
+	</script>
